@@ -24,6 +24,7 @@ export class TodoListComponent implements OnInit {
     ]
   }
 
+
   addTodo(todo: Todo){
     this.todos.push(todo);
   }
