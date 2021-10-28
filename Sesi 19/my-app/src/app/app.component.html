@@ -1,0 +1,25 @@
+<h1>Test Angular</h1>
+
+
+<component-header [message]="parentMessage"></component-header>
+
+<ul style="color: rgb(53, 11, 53);">
+    <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+<h2 style="color:rgb(32, 68, 35)">
+<app-add-new-item (newItemEvent)="addItemInParent($event)"></app-add-new-item><br><br>
+<app-button [name]="'Hapus items stackkkk'"(clickEventHandler) = "rfItemInParent()"></app-button>
+</h2>
+<h3 style="color:midnightblue;"><br>
+<app-button [name]="'Tambah Counter'"(clickEventHandler) = "addCounter()"></app-button>
+<br><br>
+<app-button [name]="'Kurang Counter'"(clickEventHandler) = "minCounter()"></app-button>
+<br><br>
+<app-button [name]="'Reset Counter'"(clickEventHandler) = "resetCounter()"></app-button>
+<h1>{{counter}}</h1></h3>
+
+<h1 id="two-way">Two-way Binding</h1>
+<div id="two-way-1">
+    <p style="color: crimson;">{{ message }}</p>
+    <label>Masukkan Pesan: <input [(ngModel)]="message"></label>
+</div>
