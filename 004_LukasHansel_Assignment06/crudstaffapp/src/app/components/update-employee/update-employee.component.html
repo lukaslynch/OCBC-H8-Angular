@@ -1,0 +1,64 @@
+<p>update-employee works!</p>
+
+<div class="auth-wrapper">
+    <form [formGroup] ="updateData" (ngSubmit)="doUpdate()">
+        <h3>Update Employee</h3>
+        <div class="form-group">
+            <label>Title : </label>
+            
+            <select class="form-control" name="title" formControlName="title" id="title" required>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+            </select>
+            <span style="color: red;" *ngIf="title && title.touched && title.invalid">
+                Masukkan Title Min 5 Karakter</span>
+        </div>
+        <div class="form-group">
+            <label>First Name : </label>
+            <input type="text" class="form-control" formControlName="firstName" name="firstName" id="firstName" required>
+            <span style="color: red;" *ngIf="firstName && firstName.touched && firstName.invalid">
+                Masukkan First Name Min 3 Karakter</span>
+        </div>
+        <div class="form-group">
+            <label>Last Name : </label>
+            <input type="text" class="form-control" formControlName="lastName" name="lastName" id="lastName" required>
+            <span style="color: red;" *ngIf="lastName && lastName.touched && lastName.invalid">
+                Masukkan Last Name Min 3 Karakter</span>
+        </div>
+        <div class="form-group">
+            <label>Email : </label>
+            <input type="text" class="form-control" formControlName="email" name="email" id="email">
+            <span style="color: red;" *ngIf="email && email.touched && email.invalid">
+                Masukkan dengan format email</span>
+        </div>
+        <div class="form-group">
+            <label>Role : </label>
+            <select class="form-control" name="role" formControlName="role" id="role" required>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+            </select>
+            <span style="color: red;" *ngIf="role && role.touched && role.invalid">
+                Pilih Role Yang Sesuai</span>
+        </div>
+        <div class="form-group">
+            <label>Password : </label>
+            <input type="password" class="form-control" formControlName="password" name="password" id="password">
+            <span style="color: red;" *ngIf="password && password.touched && password.invalid">
+                Masukkan Password Minimal 5 Karakter</span>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password : </label>
+            <input type="password" class="form-control" formControlName="confirmPassword" name="confirmPassword" id="confirmPassword">
+            <span style="color: red;" *ngIf="confirmPassword && confirmPassword.touched && confirmPassword.invalid">
+                Confirm Password Tidak Sesuai dengan Password</span>
+        </div>
+        
+        <div class="error-actions">
+            <a routerLink="/home" class="btn btn-dark btn-lg">
+                Go Back To Home
+            </a>
+            <button type="submit" class="btn btn-dark btn-lg">Update Employee</button>
+        </div>
+    </form>
+</div>

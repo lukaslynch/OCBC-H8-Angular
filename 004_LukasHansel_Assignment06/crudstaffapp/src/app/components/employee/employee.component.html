@@ -1,0 +1,27 @@
+<p>employee works!</p>
+
+<a [routerLink]="['/addEmployee']"class="btn btn-primary">Add Employee</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID Employee</th>
+        <th scope="col">Title</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <th>{{emp.id}}</th>
+        <td>{{emp.title}}</td>
+        <td>{{emp.firstName}} {{emp.lastName}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.role}}</td>
+        <td><a [routerLink]="['/updateEmployee/',emp.id]"class="btn btn-dark">Update</a>
+        <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">Delete</button></td>
+
+      </tr>
+    </tbody>
+  </table>
