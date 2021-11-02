@@ -1,0 +1,5 @@
+<app-navbar (allCountriesEmit)="tampilan=1" (homePageEmit)="tampilan=0"></app-navbar>
+<app-home *ngIf="tampilan==0" (clickEvent)="gotoCountryDetail($event)" [countriesByArea]="countriesByArea" [countriesByPopulation]="countriesByPopulation"></app-home>
+<app-all-countries *ngIf="tampilan==1" (clickEvent)="gotoCountryDetail($event)" [countries]="countries"></app-all-countries>
+<app-country-detail *ngIf="tampilan==2" [data]="countryToSend"></app-country-detail>
+<br><br><br>
