@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AddEmployeeComponent implements OnInit {
   form = {
     inputData: new FormGroup({
-      title:new FormControl('',[Validators.required,Validators.minLength(5)]),
+      title:new FormControl('',[Validators.required,Validators.minLength(1)]),
       firstname:new FormControl('',[Validators.required,Validators.minLength(3)]),
       lastname:new FormControl('',[Validators.required,Validators.minLength(3)]),
       role:new FormControl('',[Validators.required,Validators.minLength(1)]),

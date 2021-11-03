@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   addEmployee(user: Employee): Observable<any>{
-    const api = `${this.endpoint}users`;
+    const api = `${this.endpoint}Users`;
     return this.http.post(api, user).pipe( catchError(this.handleError))
   }
 
